@@ -118,7 +118,7 @@ REST_FRAMEWORK = {
         # or other permission classes
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 5,  # Limit result to 10 employees per page
+    'PAGE_SIZE': 10,  # Limit result to 10 employees per page
 
 }
 
