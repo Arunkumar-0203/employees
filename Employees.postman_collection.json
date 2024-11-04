@@ -1,0 +1,408 @@
+{
+	"info": {
+		"_postman_id": "f9aa4eb1-64e0-42ac-b2ff-2bc1a2ee5ee2",
+		"name": "Employees",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15178491"
+	},
+	"item": [
+		{
+			"name": "create-token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNTM5OTU1LCJpYXQiOjE3MzA1Mzk2NTUsImp0aSI6ImViZGUwMGNlNDViMTRlMmU5ZDJkMmUyNjQ0OTI3MjA1IiwidXNlcl9pZCI6MX0.fjDHNeteLsrJ16o-QXhBUgl0f4zDW5hBMddAyFPcecs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "admin",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "password",
+						"value": "admin",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "employees-list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNjA4Nzc5LCJpYXQiOjE3MzA2MDgyNTUsImp0aSI6ImFjNzk1MzdkOGQ5NjRhZTI4MGE4ZjhjN2M0ZWU1ZGZlIiwidXNlcl9pZCI6MX0.nSr5pXs_XKpoSbIg0etQhXzldH89dSpRwZ5Ri61RB5U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/employees/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employees",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-employee",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNTQwNjgzLCJpYXQiOjE3MzA1NDAzODMsImp0aSI6IjJkOWY1YjZmMmQxMTRlMzZiYTNiMzI5YjBjMTE1YmRlIiwidXNlcl9pZCI6MX0.dKCtWGfx2SQ5lWOHdU9RCovi3-vpLksA8cOYyr4N_e4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"name\": \"arun1\",\r\n        \"email\": \"arun@gmail.com\",\r\n        \"password\": \"pbkdf2_sha256$720000$cpEVOWEQcKhGJBW4CgCzP4$v2TxHw7DVRS+/dYWPxBQ3A8f+XQJaAiHESYtHg5qQmo=\",\r\n        \"department\": \"HR\",\r\n        \"role\": \"Manager\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/employees/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employees",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "single-employee",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNjA4Nzc5LCJpYXQiOjE3MzA2MDgyNTUsImp0aSI6ImFjNzk1MzdkOGQ5NjRhZTI4MGE4ZjhjN2M0ZWU1ZGZlIiwidXNlcl9pZCI6MX0.nSr5pXs_XKpoSbIg0etQhXzldH89dSpRwZ5Ri61RB5U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/employees/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employees",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-employee",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNTQxMDc4LCJpYXQiOjE3MzA1NDA3NzgsImp0aSI6ImI0YWU2ZTU2YzFkMDQyOTNiMGZjODAxMDVjMWEyYjg0IiwidXNlcl9pZCI6MX0.ZqEFh-PXIZ7xH54lqDIQX17yKcLxp0M1hkuWFhlYVTU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/employees/3/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employees",
+						"3",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch-department-role",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNTQxNTI3LCJpYXQiOjE3MzA1NDEyMjcsImp0aSI6ImY4ZjJkODZiZTQyYzQ2ZDNhOWZmNTAyYWVkZTY1M2E5IiwidXNlcl9pZCI6MX0.HxXr1p9L-S_jdwwM9W2NpKJ4d-ciH1OpDGaSVI-wQik",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/employees/?department=Engineer",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employees",
+						""
+					],
+					"query": [
+						{
+							"key": "department",
+							"value": "Engineer"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "fetch-department-role",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/employees/?department=Engineer",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employees",
+								""
+							],
+							"query": [
+								{
+									"key": "department",
+									"value": "Engineer"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 02 Nov 2024 09:55:06 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "102"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"name\": \"John Doe\",\n        \"email\": \"john.doe@example.com\",\n        \"department\": \"Engineer\",\n        \"role\": \"Developer\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "refresh-token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczMDY5NDY1NSwiaWF0IjoxNzMwNjA4MjU1LCJqdGkiOiI4NDExNGRhNDIyNjc0MzZhOWJjYmNkYWI4NGU2YmZiMyIsInVzZXJfaWQiOjF9.iK10TuLNZwOJvO7qn3RUXYndmtuij-SshEKBggjRNPY\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/refresh/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-employee",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNjA4NTU1LCJpYXQiOjE3MzA2MDgyNTUsImp0aSI6IjhhZDcxMjRlZGMzNjQxNDg4MzQ4YmUzOGFiNTU3ZTI4IiwidXNlcl9pZCI6MX0.3fOXBAW6KZrS53gC0Sew6cwITGOwfZGXqDQiUQ2lfck",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n            \r\n            \"name\": \"John Doe\",\r\n            \"email\": \"john@example.com\",\r\n            \"department\": \"HR\",\r\n            \"role\": \"Manager\"\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/employees/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"employees",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
